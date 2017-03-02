@@ -20,68 +20,48 @@
     WindowStyle="None"
     mc:Ignorable="d">
     <Window.Resources>
-        <System:Double
-            x:Key="WindowsHeight">
+        <System:Double x:Key="WindowsHeight">
             640
         </System:Double>
-        <System:Double
-            x:Key="WindowsWidht">
+        <System:Double x:Key="WindowsWidht">
             360
         </System:Double>
-        <FontFamily
-            x:Key="Roboto">
+        <FontFamily x:Key="Roboto">
             /ClipBoardSync;component/Fonts/#Roboto
         </FontFamily>
-        <FontFamily
-            x:Key="Material-Icons">
+        <FontFamily x:Key="Material-Icons">
             /ClipBoardSync;component/Fonts/#Material Icons
         </FontFamily>
-        <SolidColorBrush
-            x:Key="PrimaryColor"
-            Color="#FF1E88E6" />
-        <SolidColorBrush
-            x:Key="ButtonColor"
-            Color="#FF646464" />
+        <SolidColorBrush x:Key="PrimaryColor" Color="#FF1E88E6" />
+        <SolidColorBrush x:Key="ButtonColor" Color="#FF646464" />
 
 
-        <ScrollBarVisibility
-            x:Key="ScrollBarVisibility">
+        <ScrollBarVisibility x:Key="ScrollBarVisibility">
             Disabled
         </ScrollBarVisibility>
-        <System:Double
-            x:Key="BottomButtonWidth">
+        <System:Double x:Key="BottomButtonWidth">
             120
         </System:Double>
-        <System:Double
-            x:Key="BottomButtonHeight">
+        <System:Double x:Key="BottomButtonHeight">
             56
         </System:Double>
-        <Thickness
-            x:Key="BottomButtonPaddingInactive">
+        <Thickness x:Key="BottomButtonPaddingInactive">
             12,8,12,10
         </Thickness>
     </Window.Resources>
-    <Grid
-        Background="#FFFAFAFA"
-        ScrollViewer.VerticalScrollBarVisibility="Disabled">
+    <Grid Background="#FFFAFAFA" ScrollViewer.VerticalScrollBarVisibility="Disabled">
         <Grid.RowDefinitions>
-            <RowDefinition
-                Height="56" />
-            <RowDefinition
-                Height="*" />
-            <RowDefinition
-                Height="56" />
+            <RowDefinition Height="56" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="56" />
         </Grid.RowDefinitions>
         <ListBox
             x:Name="listBox_content"
             Grid.Row="1"
             Background="{x:Null}">
 
-            <ListBoxItem
-                Margin="0"
-                Content="ListBoxItem" />
-            <ListBoxItem
-                Content="ListBoxItem" />
+            <ListBoxItem Margin="0" Content="ListBoxItem" />
+            <ListBoxItem Content="ListBoxItem" />
         </ListBox>
         <Grid
             x:Name="app_bar"
@@ -97,10 +77,8 @@
             </Grid.Effect>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
-                <ColumnDefinition
-                    Width="72" />
-                <ColumnDefinition
-                    Width="66" />
+                <ColumnDefinition Width="72" />
+                <ColumnDefinition Width="66" />
             </Grid.ColumnDefinitions>
             <Label
                 x:Name="sync_icon"
@@ -148,21 +126,15 @@
                 Content="ToggleButton"
                 d:LayoutOverrides="Width">
                 <ToggleButton.Foreground>
-                    <SolidColorBrush
-                        Color="#FF2196F3" />
+                    <SolidColorBrush Color="#FF2196F3" />
                 </ToggleButton.Foreground>
             </ToggleButton>
         </Grid>
-        <Grid
-            x:Name="bottom_bar"
-            Grid.Row="2">
+        <Grid x:Name="bottom_bar" Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition
-                    Width="120" />
-                <ColumnDefinition
-                    Width="120" />
-                <ColumnDefinition
-                    Width="120" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="120" />
             </Grid.ColumnDefinitions>
             <Button
                 x:Name="history_button"
@@ -172,14 +144,10 @@
                 Foreground="{DynamicResource PrimaryColor}"
                 ScrollViewer.VerticalScrollBarVisibility="Disabled">
                 <Button.Background>
-                    <SolidColorBrush
-                        Opacity="0"
-                        Color="#FF2196F3" />
+                    <SolidColorBrush Opacity="0" Color="#FF2196F3" />
                 </Button.Background>
                 <Button.BorderBrush>
-                    <SolidColorBrush
-                        Opacity="0"
-                        Color="#FF2196F3" />
+                    <SolidColorBrush Opacity="0" Color="#FF2196F3" />
                 </Button.BorderBrush>
                 <Grid
                     Width="{DynamicResource BottomButtonWidth}"
@@ -222,14 +190,10 @@
                 Foreground="{DynamicResource PrimaryColor}"
                 ScrollViewer.VerticalScrollBarVisibility="Disabled">
                 <Button.Background>
-                    <SolidColorBrush
-                        Opacity="0"
-                        Color="#FF2196F3" />
+                    <SolidColorBrush Opacity="0" Color="#FF2196F3" />
                 </Button.Background>
                 <Button.BorderBrush>
-                    <SolidColorBrush
-                        Opacity="0"
-                        Color="#FF2196F3" />
+                    <SolidColorBrush Opacity="0" Color="#FF2196F3" />
                 </Button.BorderBrush>
                 <Grid
                     Width="{DynamicResource BottomButtonWidth}"
@@ -272,14 +236,10 @@
                 Foreground="{DynamicResource PrimaryColor}"
                 ScrollViewer.VerticalScrollBarVisibility="Disabled">
                 <Button.Background>
-                    <SolidColorBrush
-                        Opacity="0"
-                        Color="#FF2196F3" />
+                    <SolidColorBrush Opacity="0" Color="#FF2196F3" />
                 </Button.Background>
                 <Button.BorderBrush>
-                    <SolidColorBrush
-                        Opacity="0"
-                        Color="#FF2196F3" />
+                    <SolidColorBrush Opacity="0" Color="#FF2196F3" />
                 </Button.BorderBrush>
                 <Grid
                     Width="{DynamicResource BottomButtonWidth}"
