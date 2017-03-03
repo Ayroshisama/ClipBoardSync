@@ -126,6 +126,7 @@
                                     VerticalAlignment="Top"
                                     FontFamily="/ClipBoardSync;component/Fonts/#Roboto"
                                     FontSize="16"
+                                    Foreground="{DynamicResource PrimaryTextColor}"
                                     Text="1000000000000000000000000000000000000000022"
                                     TextTrimming="CharacterEllipsis"
                                     TextWrapping="Wrap" />
@@ -141,6 +142,7 @@
                                     VerticalAlignment="Bottom"
                                     FontFamily="/ClipBoardSync;component/Fonts/#Roboto"
                                     FontSize="14"
+                                    Foreground="{DynamicResource SecondaryTextColor}"
                                     Text="TextBlockTextBlockTextBlockTextBlockTextBlockTextBlockTextBlockTextBlockTextBlock"
                                     TextTrimming="CharacterEllipsis"
                                     TextWrapping="Wrap" />

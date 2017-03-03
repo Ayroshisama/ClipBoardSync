@@ -20,54 +20,75 @@
     WindowStyle="None"
     mc:Ignorable="d">
     <Window.Resources>
-        <System:Double x:Key="WindowsHeight">
+        <System:Double
+            x:Key="WindowsHeight">
             640
         </System:Double>
-        <System:Double x:Key="WindowsWidht">
+        <System:Double
+            x:Key="WindowsWidht">
             360
         </System:Double>
-        <FontFamily x:Key="Roboto">
+        <FontFamily
+            x:Key="Roboto">
             /ClipBoardSync;component/Fonts/#Roboto
         </FontFamily>
-        <FontFamily x:Key="Material-Icons">
+        <FontFamily
+            x:Key="Material-Icons">
             /ClipBoardSync;component/Fonts/#Material Icons
         </FontFamily>
-        <SolidColorBrush x:Key="PrimaryColor" Color="#FF1E88E6" />
-        <SolidColorBrush x:Key="ButtonColor" Color="#FF646464" />
+        <SolidColorBrush
+            x:Key="PrimaryColor"
+            Color="#FF1E88E6" />
+        <SolidColorBrush
+            x:Key="ButtonColor"
+            Color="#89000000" />
 
 
-        <ScrollBarVisibility x:Key="ScrollBarVisibility">
+        <ScrollBarVisibility
+            x:Key="ScrollBarVisibility">
             Disabled
         </ScrollBarVisibility>
-        <System:Double x:Key="BottomButtonWidth">
+        <System:Double
+            x:Key="BottomButtonWidth">
             120
         </System:Double>
-        <System:Double x:Key="BottomButtonHeight">
+        <System:Double
+            x:Key="BottomButtonHeight">
             56
         </System:Double>
-        <Thickness x:Key="BottomButtonPaddingInactive">
+        <Thickness
+            x:Key="BottomButtonPaddingInactive">
             12,8,12,10
         </Thickness>
-    </Window.Resources>
-    <Grid Background="#FFFAFAFA" ScrollViewer.VerticalScrollBarVisibility="Disabled">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="56" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="56" />
-        </Grid.RowDefinitions>
-        <ListBox
-            x:Name="listBox_content"
-            Grid.Row="1"
-            Background="{x:Null}">
+        <SolidColorBrush
+            x:Key="TabItem.Selected.Background"
+            Color="#FFFFFF" />
+        <SolidColorBrush
+            x:Key="TabItem.Selected.Border"
+            Color="#ACACAC" />
+        <Thickness
+            x:Key="BottomButtonPaddingActive">
+            12,6,12,10
+        </Thickness>
 
-            <ListBoxItem Margin="0" Content="ListBoxItem" />
-            <ListBoxItem Content="ListBoxItem" />
-        </ListBox>
+    </Window.Resources>
+    <Grid
+        Background="#FFE5E5E5"
+        ScrollViewer.VerticalScrollBarVisibility="Disabled">
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="56" />
+            <RowDefinition
+                Height="531*" />
+            <RowDefinition
+                Height="56*" />
+        </Grid.RowDefinitions>
         <Grid
             x:Name="app_bar"
             Grid.RowSpan="1"
             Background="#FF1E88E6"
-            SnapsToDevicePixels="True">
+            SnapsToDevicePixels="True"
+            d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
             <Grid.Effect>
                 <DropShadowEffect
                     BlurRadius="8"
@@ -77,37 +98,41 @@
             </Grid.Effect>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
-                <ColumnDefinition Width="72" />
-                <ColumnDefinition Width="66" />
+                <ColumnDefinition
+                    Width="Auto" />
+                <ColumnDefinition
+                    Width="Auto" />
             </Grid.ColumnDefinitions>
             <Label
                 x:Name="sync_icon"
                 Grid.Column="1"
+                Width="56"
                 Margin="0"
-                Padding="16,0"
-                VerticalAlignment="Center"
+                Padding="0"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 Background="{x:Null}"
-                Content=" cloud"
+                Content="cloud"
                 FontFamily="{DynamicResource Material-Icons}"
                 FontSize="24"
-                Foreground="#DDFFFFFF"
-                d:LayoutOverrides="Width" />
+                Foreground="#DDFFFFFF" />
             <Label
                 x:Name="current_page_name"
-                Grid.ColumnSpan="3"
+                Width="95"
                 Padding="16,0,0,20"
                 HorizontalAlignment="Left"
-                VerticalAlignment="Bottom"
+                VerticalContentAlignment="Bottom"
                 Background="{x:Null}"
-                Content="123"
+                Content="История"
                 FontFamily="{DynamicResource Roboto}"
                 FontSize="20"
                 Foreground="#DDFFFFFF"
                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                UseLayoutRounding="True" />
+                UseLayoutRounding="True"
+                d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
             <Button
                 x:Name="search_button"
-                Width="72"
+                Width="56"
                 Height="Auto"
                 Margin="0"
                 Padding="16,0"
@@ -117,162 +142,459 @@
                 Content="search"
                 FontFamily="{DynamicResource Material-Icons}"
                 FontSize="24"
-                IsManipulationEnabled="True" />
+                IsManipulationEnabled="True"
+                d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
             <ToggleButton
                 x:Name="sync_switch"
                 Grid.Column="2"
-                Margin="16,19.223"
-                VerticalAlignment="Center"
+                Margin="16,0"
                 Content="ToggleButton"
-                d:LayoutOverrides="Width">
-                <ToggleButton.Foreground>
-                    <SolidColorBrush Color="#FF2196F3" />
-                </ToggleButton.Foreground>
-            </ToggleButton>
+                Foreground="#FF2196F3" />
         </Grid>
-        <Grid x:Name="bottom_bar" Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="120" />
-                <ColumnDefinition Width="120" />
-                <ColumnDefinition Width="120" />
-            </Grid.ColumnDefinitions>
-            <Button
-                x:Name="history_button"
-                Width="{DynamicResource BottomButtonWidth}"
-                Height="{DynamicResource BottomButtonHeight}"
-                BorderThickness="0"
-                Foreground="{DynamicResource PrimaryColor}"
-                ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                <Button.Background>
-                    <SolidColorBrush Opacity="0" Color="#FF2196F3" />
-                </Button.Background>
-                <Button.BorderBrush>
-                    <SolidColorBrush Opacity="0" Color="#FF2196F3" />
-                </Button.BorderBrush>
-                <Grid
-                    Width="{DynamicResource BottomButtonWidth}"
-                    Height="{DynamicResource BottomButtonHeight}"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
-                    <Label
-                        x:Name="historyIcon"
-                        Width="{DynamicResource BottomButtonWidth}"
-                        Height="{DynamicResource BottomButtonHeight}"
-                        Padding="{DynamicResource BottomButtonPaddingInactive}"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        HorizontalContentAlignment="Center"
-                        Content="history"
-                        FontFamily="{DynamicResource Material-Icons}"
-                        FontSize="24"
-                        Foreground="{DynamicResource ButtonColor}" />
-                    <Label
-                        x:Name="hictoryText"
-                        Width="{DynamicResource BottomButtonWidth}"
-                        Height="{DynamicResource BottomButtonHeight}"
-                        Padding="{DynamicResource BottomButtonPaddingInactive}"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Bottom"
-                        HorizontalContentAlignment="Center"
-                        VerticalContentAlignment="Bottom"
-                        Content="История"
-                        FontFamily="{DynamicResource Roboto}"
-                        Foreground="{DynamicResource ButtonColor}" />
-                </Grid>
-            </Button>
+        <TabControl
+            x:Name="tabControl"
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Padding="0"
+            HorizontalContentAlignment="Left"
+            Background="#FFE5E5E5"
+            BorderBrush="{x:Null}"
+            BorderThickness="0"
+            Foreground="{DynamicResource ButtonColor}"
+            TabStripPlacement="Bottom"
+            Template="{DynamicResource TabControlControlTemplateStyle}"
+            d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
 
-            <Button
-                x:Name="favorite_button"
-                Grid.Column="1"
-                Width="{DynamicResource BottomButtonWidth}"
-                Height="{DynamicResource BottomButtonHeight}"
-                BorderThickness="0"
-                Foreground="{DynamicResource PrimaryColor}"
-                ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                <Button.Background>
-                    <SolidColorBrush Opacity="0" Color="#FF2196F3" />
-                </Button.Background>
-                <Button.BorderBrush>
-                    <SolidColorBrush Opacity="0" Color="#FF2196F3" />
-                </Button.BorderBrush>
-                <Grid
-                    Width="{DynamicResource BottomButtonWidth}"
-                    Height="{DynamicResource BottomButtonHeight}"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
-                    <Label
-                        x:Name="favoriteIcon"
-                        Width="{DynamicResource BottomButtonWidth}"
-                        Height="{DynamicResource BottomButtonHeight}"
-                        Padding="{DynamicResource BottomButtonPaddingInactive}"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        HorizontalContentAlignment="Center"
-                        Content="grade"
-                        FontFamily="{DynamicResource Material-Icons}"
-                        FontSize="24"
-                        Foreground="{DynamicResource ButtonColor}" />
-                    <Label
-                        x:Name="favoriteText"
-                        Width="{DynamicResource BottomButtonWidth}"
-                        Height="{DynamicResource BottomButtonHeight}"
-                        Padding="{DynamicResource BottomButtonPaddingInactive}"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Bottom"
-                        HorizontalContentAlignment="Center"
-                        VerticalContentAlignment="Bottom"
-                        Content="Избранное"
-                        FontFamily="{DynamicResource Roboto}"
-                        Foreground="{DynamicResource ButtonColor}" />
-                </Grid>
-            </Button>
+            <TabControl.Resources>
+                <Style
+                    TargetType="{x:Type TabItem}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate
+                                TargetType="{x:Type TabItem}">
+                                <Border
+                                    x:Name="Panel"
+                                    Width="{DynamicResource BottomButtonWidth}"
+                                    Height="{DynamicResource BottomButtonHeight}"
+                                    MinWidth="{DynamicResource BottomButtonWidth}"
+                                    MinHeight="{DynamicResource BottomButtonHeight}"
+                                    MaxWidth="{DynamicResource BottomButtonWidth}"
+                                    MaxHeight="{DynamicResource BottomButtonHeight}"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+                                    <ContentPresenter
+                                        x:Name="ContentSite"
+                                        ContentSource="Header" />
+                                </Border>
 
-            <Button
-                x:Name="settings_button"
-                Grid.Column="2"
-                Width="{DynamicResource BottomButtonWidth}"
-                Height="{DynamicResource BottomButtonHeight}"
-                BorderThickness="0"
-                Foreground="{DynamicResource PrimaryColor}"
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter Property="FontSize" Value="16" />
+                                        <Setter Property="Foreground" Value="{StaticResource PrimaryColor}" />
+                                        <Setter TargetName="Panel" Property="HorizontalAlignment" Value="Center" />
+                                        <Setter TargetName="Panel" Property="VerticalAlignment" Value="Center" />
+                                        <Setter TargetName="Panel" Property="Padding" Value="12,6,12,10" />
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="False">
+                                        <Setter Property="Foreground" Value="{StaticResource ButtonColor}" />
+                                        <Setter Property="FontSize" Value="14" />
+                                        <Setter TargetName="Panel" Property="Padding" Value="12,8,12,10" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TabControl.Resources>
+            <TabItem
+                x:Name="historyTab"
+                Margin="0"
+                Padding="0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                BorderBrush="{x:Null}"
+                IsSelected="True"
                 ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                <Button.Background>
-                    <SolidColorBrush Opacity="0" Color="#FF2196F3" />
-                </Button.Background>
-                <Button.BorderBrush>
-                    <SolidColorBrush Opacity="0" Color="#FF2196F3" />
-                </Button.BorderBrush>
-                <Grid
-                    Width="{DynamicResource BottomButtonWidth}"
-                    Height="{DynamicResource BottomButtonHeight}"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
-                    <Label
-                        x:Name="settingsIcon"
-                        Width="{DynamicResource BottomButtonWidth}"
-                        Height="{DynamicResource BottomButtonHeight}"
-                        Padding="{DynamicResource BottomButtonPaddingInactive}"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        HorizontalContentAlignment="Center"
-                        Content="settings"
-                        FontFamily="{DynamicResource Material-Icons}"
-                        FontSize="24"
-                        Foreground="{DynamicResource ButtonColor}" />
-                    <Label
-                        x:Name="settingsText"
-                        Width="{DynamicResource BottomButtonWidth}"
-                        Height="{DynamicResource BottomButtonHeight}"
-                        Padding="{DynamicResource BottomButtonPaddingInactive}"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Bottom"
-                        HorizontalContentAlignment="Center"
-                        VerticalContentAlignment="Bottom"
-                        Content="Настройки"
-                        FontFamily="{DynamicResource Roboto}"
-                        FontWeight="Normal"
-                        Foreground="{DynamicResource ButtonColor}" />
+                <TabItem.Background>
+                    <SolidColorBrush
+                        Color="#FF683636" />
+                </TabItem.Background>
+                <TabItem.Header>
+
+                    <Grid
+                        Margin="0">
+                        <Grid.Background>
+                            <SolidColorBrush
+                                Opacity="0"
+                                Color="White" />
+                        </Grid.Background>
+                        <Label
+                            x:Name="historyIcon"
+                            Padding="0"
+                            HorizontalContentAlignment="Center"
+                            Content="history"
+                            FontFamily="/ClipBoardSync;component/Fonts/#Material Icons"
+                            FontSize="24"
+                            Foreground="{Binding Foreground, ElementName=historyTab}"
+                            d:LayoutOverrides="LeftPosition, RightPosition" />
+                        <Label
+                            x:Name="hictoryText"
+                            Padding="0"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Bottom"
+                            Content="История"
+                            FontFamily="/ClipBoardSync;component/Fonts/#Roboto"
+                            FontSize="{Binding FontSize, ElementName=historyTab}"
+                            Foreground="{Binding Foreground, ElementName=historyTab}" />
+                    </Grid>
+
+                </TabItem.Header>
+                <Grid>
+                    <ListBox
+                        x:Name="listBox_content"
+                        Margin="0"
+                        Background="{x:Null}"
+                        ScrollViewer.VerticalScrollBarVisibility="Disabled">
+
+                        <ListBoxItem
+                            Margin="0"
+                            Content="ListBoxItem" />
+                        <ListBoxItem
+                            Content="ListBoxItem" />
+                        <ListBoxItem
+                            Content="ListBoxItem" />
+                        <ListBoxItem
+                            Content="ListBoxItem" />
+                        <ListBoxItem
+                            Content="ListBoxItem" />
+                        <ListBoxItem
+                            Content="ListBoxItem" />
+                        <ListBoxItem
+                            Content="ListBoxItem" />
+                        <ListBoxItem
+                            Content="ListBoxItem" />
+                        <ListBoxItem
+                            Content="ListBoxItem" />
+                    </ListBox>
                 </Grid>
-            </Button>
-        </Grid>
+            </TabItem>
+            <TabItem
+                x:Name="favoriteTab"
+                Margin="0"
+                Padding="0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                BorderThickness="0"
+                ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                <TabItem.Header>
+                    <Grid>
+                        <Label
+                            x:Name="favoriteIcon"
+                            Padding="0"
+                            HorizontalContentAlignment="Center"
+                            Content="grade"
+                            FontFamily="/ClipBoardSync;component/Fonts/#Material Icons"
+                            FontSize="24"
+                            Foreground="{Binding Foreground, ElementName=favoriteTab}" />
+                        <Label
+                            x:Name="favoriteText"
+                            Margin="0"
+                            Padding="0"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Bottom"
+                            Content="Избранное"
+                            FontFamily="/ClipBoardSync;component/Fonts/#Roboto"
+                            FontSize="{Binding FontSize, ElementName=favoriteTab}"
+                            Foreground="{Binding Foreground, ElementName=favoriteTab}" />
+
+                    </Grid>
+                </TabItem.Header>
+                <Grid
+                    Height="528">
+                    <ListBox
+                        x:Name="listBox">
+                        <ListBoxItem
+                            BorderThickness="0"
+                            Content="ListBoxItem" />
+                    </ListBox>
+                </Grid>
+            </TabItem>
+            <TabItem
+                x:Name="settingsTab"
+                Margin="0"
+                Padding="0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                <TabItem.Header>
+                    <Grid>
+                        <Label
+                            x:Name="settingsIcon"
+                            Padding="0"
+                            HorizontalContentAlignment="Center"
+                            Content="settings"
+                            FontFamily="/ClipBoardSync;component/Fonts/#Material Icons"
+                            FontSize="24"
+                            Foreground="{Binding Foreground, ElementName=settingsTab}" />
+                        <Label
+                            x:Name="settingsText"
+                            Padding="0"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Bottom"
+                            Content="Настройки"
+                            FontFamily="/ClipBoardSync;component/Fonts/#Roboto"
+                            FontSize="{Binding FontSize, ElementName=settingsTab}"
+                            Foreground="{Binding Foreground, ElementName=settingsTab}" />
+                    </Grid>
+                </TabItem.Header>
+                <StackPanel
+                    Width="360"
+                    Height="530"
+                    Background="#FFE5E5E5"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <StackPanel
+                        Height="167"
+                        d:LayoutOverrides="LeftPosition, RightPosition">
+                        <Label
+                            x:Name="accaunt_label"
+                            Height="48"
+                            Padding="16,4"
+                            VerticalContentAlignment="Center"
+                            Content="Аккаунт"
+                            FontFamily="/ClipBoardSync;component/Fonts/#Roboto"
+                            FontSize="14"
+                            Foreground="{DynamicResource PrimaryColor}" />
+                        <Button
+                            x:Name="accaunt_settings_button"
+                            Height="72"
+                            Padding="0"
+                            VerticalAlignment="Top"
+                            HorizontalContentAlignment="Left"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}"
+                            BorderThickness="0"
+                            FontWeight="Normal"
+                            ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                            <Grid
+                                Width="360"
+                                Height="72">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition
+                                        Width="72" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Image
+                                    x:Name="accaunt_avatar"
+                                    Width="72"
+                                    Height="72"
+                                    Margin="0"
+                                    VerticalAlignment="Top" />
+                                <TextBlock
+                                    x:Name="accaunt_name"
+                                    Grid.Column="1"
+                                    Margin="0"
+                                    Padding="0,0,0,20"
+                                    VerticalAlignment="Bottom"
+                                    FontFamily="/ClipBoardSync;component/Fonts/#Roboto"
+                                    Foreground="{DynamicResource SecondaryTextColor}"
+                                    Text="TextBlock"
+                                    TextWrapping="Wrap"
+                                    d:LayoutOverrides="Width" />
+                                <TextBlock
+                                    x:Name="accaunt_email"
+                                    Grid.Column="1"
+                                    Padding="0,20,0,0"
+                                    VerticalAlignment="Top"
+                                    FontFamily="/ClipBoardSync;component/Fonts/#Roboto"
+                                    FontSize="16"
+                                    Foreground="{DynamicResource PrimaryTextColor}"
+                                    TextWrapping="Wrap"><Run
+                                        Text="TextBlock" /></TextBlock>
+                            </Grid>
+                        </Button>
+                        <Button
+                            x:Name="accaunt_add_button"
+                            Height="48"
+                            Padding="16,4"
+                            HorizontalContentAlignment="Left"
+                            BorderBrush="{x:Null}"
+                            BorderThickness="0"
+                            Content="Добавить аккаунт"
+                            FontFamily="/ClipBoardSync;component/Fonts/#Roboto"
+                            FontSize="16"
+                            FontWeight="Normal"
+                            Foreground="{DynamicResource PrimaryTextColor}">
+                            <Button.Background>
+                                <SolidColorBrush
+                                    Opacity="0"
+                                    Color="White" />
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel
+                        Height="358"
+                        d:LayoutOverrides="LeftPosition, RightPosition">
+                        <Label
+                            x:Name="general_label"
+                            Height="48"
+                            Padding="16,4"
+                            VerticalContentAlignment="Center"
+                            Content="Общие "
+                            FontFamily="/ClipBoardSync;component/Fonts/#Roboto"
+                            FontSize="14"
+                            Foreground="{DynamicResource PrimaryColor}" />
+                        <StackPanel
+                            Height="336.667">
+                            <Grid
+                                Height="48"
+                                Margin="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition
+                                        Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <ToggleButton
+                                    x:Name="toggleButton"
+                                    Grid.Column="1"
+                                    Margin="16,0"
+                                    Content="ToggleButton" />
+                                <TextBlock
+                                    x:Name="textBlock"
+                                    Margin="0"
+                                    Padding="16,0"
+                                    VerticalAlignment="Center"
+                                    FontFamily="/ClipBoardSync;component/Fonts/#Roboto"
+                                    Foreground="{DynamicResource PrimaryTextColor}"
+                                    ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                    TextWrapping="Wrap"><Run
+                                        Text="TextBlock" /></TextBlock>
+                            </Grid>
+                            <Grid
+                                Height="48"
+                                d:LayoutOverrides="LeftPosition, RightPosition">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition
+                                        Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <ToggleButton
+                                    x:Name="startup_switch"
+                                    Grid.Column="1"
+                                    Width="34"
+                                    Margin="16,0"
+                                    Content="ToggleButton" />
+                                <TextBlock
+                                    x:Name="startup_label"
+                                    Padding="16,0"
+                                    VerticalAlignment="Center"
+                                    FontFamily="/ClipBoardSync;component/Fonts/#Roboto"
+                                    Foreground="{DynamicResource PrimaryTextColor}"
+                                    Text="Запускать при старте системы"
+                                    TextWrapping="Wrap" />
+                            </Grid>
+                            <Button
+                                x:Name="notifictions_settings"
+                                Height="48"
+                                HorizontalContentAlignment="Left"
+                                BorderBrush="{x:Null}"
+                                Content="Настройка уведомлений"
+                                FontFamily="/ClipBoardSync;component/Fonts/#Roboto"
+                                FontSize="16"
+                                FontWeight="Normal"
+                                Foreground="{DynamicResource PrimaryTextColor}">
+                                <Button.Background>
+                                    <SolidColorBrush
+                                        Opacity="0"
+                                        Color="Black" />
+                                </Button.Background>
+                            </Button>
+                            <Button
+                                x:Name="language"
+                                Height="72"
+                                Margin="0"
+                                Padding="0"
+                                BorderBrush="{x:Null}"
+                                Foreground="{DynamicResource PrimaryTextColor}">
+                                <Button.Background>
+                                    <SolidColorBrush
+                                        Opacity="0"
+                                        Color="#FF2196F3" />
+                                </Button.Background>
+                                <Grid
+                                    Width="360"
+                                    Height="72">
+                                    <TextBlock
+                                        x:Name="language_label"
+                                        Margin="0"
+                                        Padding="16,20"
+                                        VerticalAlignment="Top"
+                                        FontFamily="/ClipBoardSync;component/Fonts/#Roboto"
+                                        FontSize="16"
+                                        FontWeight="Normal"
+                                        Foreground="{DynamicResource PrimaryTextColor}"
+                                        Text="Язык"
+                                        TextWrapping="Wrap"
+                                        d:LayoutOverrides="Width" />
+                                    <TextBlock
+                                        x:Name="language_select"
+                                        Margin="0"
+                                        Padding="16,20"
+                                        VerticalAlignment="Bottom"
+                                        FontFamily="/ClipBoardSync;component/Fonts/#Roboto"
+                                        FontSize="14"
+                                        FontWeight="Normal"
+                                        Foreground="{DynamicResource SecondaryTextColor}"
+                                        Text="Русский(Россия)"
+                                        TextWrapping="Wrap"
+                                        d:LayoutOverrides="Width" />
+                                </Grid>
+                            </Button>
+                            <Button
+                                x:Name="about"
+                                Height="48"
+                                HorizontalContentAlignment="Left"
+                                BorderBrush="{x:Null}"
+                                Content="О программе"
+                                FontFamily="/ClipBoardSync;component/Fonts/#Roboto"
+                                FontSize="16"
+                                FontWeight="Normal"
+                                Foreground="{DynamicResource PrimaryTextColor}">
+                                <Button.Background>
+                                    <SolidColorBrush
+                                        Opacity="0"
+                                        Color="#FF2196F3" />
+                                </Button.Background>
+                            </Button>
+                            <Button
+                                x:Name="exit"
+                                Height="48"
+                                HorizontalContentAlignment="Left"
+                                BorderBrush="{x:Null}"
+                                Content="Выход"
+                                FontFamily="/ClipBoardSync;component/Fonts/#Roboto"
+                                FontSize="16"
+                                FontWeight="Normal"
+                                Foreground="{DynamicResource PrimaryTextColor}">
+                                <Button.Background>
+                                    <SolidColorBrush
+                                        Opacity="0"
+                                        Color="#FF2196F3" />
+                                </Button.Background>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
