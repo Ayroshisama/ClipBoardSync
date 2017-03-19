@@ -5,11 +5,26 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Drawing;
 
 namespace ClipBoardSync {
     /// <summary>
     /// Логика взаимодействия для App.xaml
     /// </summary>
-    public partial class App : Application {
-    }
+    //public partial class App : Application {
+    //    System.Windows.Forms.NotifyIcon nIcon = new System.Windows.Forms.NotifyIcon();
+    //    public App() {
+    //        nIcon.Icon = new Icon(@"Resources/Icon1.ico");
+    //        nIcon.Visible = true;
+    //     //   nIcon.ShowBalloonTip(5000, "Title", "Text", System.Windows.Forms.ToolTipIcon.Info);
+    //        nIcon.Click += nIcon_Click;
+    //    }
+
+    //    void nIcon_Click(object sender, EventArgs e) {
+    //        //events comes here
+    //        MainWindow.Visibility = Visibility.Visible;
+    //        MainWindow.WindowState = WindowState.Normal;
+    //    }
+    //}
 }
+

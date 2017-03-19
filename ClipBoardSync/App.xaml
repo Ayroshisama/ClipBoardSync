@@ -19,6 +19,7 @@
                     Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
                 <ResourceDictionary
                     Source="ListBoxItemStyle.xaml" />
+              
 
             </ResourceDictionary.MergedDictionaries>
             <ControlTemplate
